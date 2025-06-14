@@ -1,0 +1,3 @@
+ALTER TABLE employee
+    ADD CONSTRAINT FK_EMPLOYEE_ON_ADDRESS FOREIGN KEY (address_id) REFERENCES address (id);
+

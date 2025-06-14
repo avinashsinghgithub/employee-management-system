@@ -1,0 +1,158 @@
+[
+  {
+    "firstName": "Hamilton",
+    "joiningDate": "2013-01-01",
+    "lastName": "George",
+    "employeeType": "Permanent",
+    "email" : "test1@gmail.com",
+    "address": {
+      "street": "Charring Cross",
+      "aptNum": 11,
+      "pinCode": 520233,
+      "flatName": "RFE"
+    }
+  },
+  {
+     "firstName": "Shamrock",
+    "joiningDate": "2013-01-01",
+    "lastName": "Tully",
+    "employeeType": "Permanent",
+    "email" : "test2@gmail.com",
+    "address": {
+      "street": "GT Road",
+      "aptNum": 21,
+      "pinCode": 521001,
+      "flatName": "TRF"
+    }
+  },
+  {
+    "firstName": "Pratap",
+    "joiningDate": "2013-01-01",
+    "lastName": "Chauhan",
+    "employeeType": "Contractor",
+    "email" : "test3@gmail.com",
+    "address": {
+      "street": "Hinduja avenue",
+      "aptNum": 22,
+      "pinCode": 801115,
+      "flatName": "LIO"
+    }
+  },
+  {
+    "firstName": "Krish",
+    "joiningDate": "2013-01-01",
+    "lastName": "Homer",
+    "employeeType": "Permanent",
+    "email" : "test_kh@gmail.com",
+    "address": {
+      "street": "Charring Cross",
+      "aptNum": 14,
+      "pinCode": 532233,
+      "flatName": "EGE"
+    }
+  },
+  {
+    "firstName": "Bobman",
+    "joiningDate": "2013-01-01",
+    "lastName": "Carrie",
+    "employeeType": "Permanent",
+    "email" : "bc@gmail.com",
+    "address": {
+      "street": "Jigs Cross",
+      "aptNum": 16,
+      "pinCode": 514233,
+      "flatName": "UHJ"
+    }
+  },
+  {
+    "firstName": "Maxim",
+    "joiningDate": "2013-01-01",
+    "lastName": "Muller",
+    "employeeType": "Permanent",
+    "email" : "mm@gmail.com",
+    "address": {
+      "street": "Admond Cross",
+      "aptNum": 17,
+      "pinCode": 522233,
+      "flatName": "GHT"
+    }
+  },
+  {
+    "firstName": "Givoni",
+    "joiningDate": "2013-01-01",
+    "lastName": "Gomez",
+    "employeeType": "Permanent",
+    "email" : "gz@gmail.com",
+    "address": {
+      "street": "Charring Cross",
+      "aptNum": 55,
+      "pinCode": 520231,
+      "flatName": "LDF"
+    }
+  },
+  {
+    "firstName": "harword",
+    "joiningDate": "2013-01-01",
+    "lastName": "pecker",
+    "employeeType": "Permanent",
+    "email" : "hp@gmail.com",
+    "address": {
+      "street": "beggers Cross",
+      "aptNum": 32,
+      "pinCode": 512343,
+      "flatName": "TDB"
+    }
+  },
+  {
+    "firstName": "Toffel",
+    "joiningDate": "2013-01-01",
+    "lastName": "tiggs",
+    "employeeType": "Permanent",
+    "email" : "tt@gmail.com",
+    "address": {
+      "street": "sham Cross",
+      "aptNum": 23,
+      "pinCode": 520433,
+      "flatName": "HAT"
+    }
+  },
+  {
+    "firstName": "Boland",
+    "joiningDate": "2013-01-01",
+    "lastName": "Murphy",
+    "employeeType": "Permanent",
+    "email" : "test1@gmail.com",
+    "address": {
+      "street": "charles Cross",
+      "aptNum": 66,
+      "pinCode": 520244,
+      "flatName": "XIG"
+    }
+  },
+  {
+    "firstName": "Randy",
+    "joiningDate": "2013-01-01",
+    "lastName": "Orten",
+    "employeeType": "Permanent",
+    "email" : "ro@gmail.com",
+    "address": {
+      "street": "tinkers avenue",
+      "aptNum": 87,
+      "pinCode": 120233,
+      "flatName": "ADD"
+    }
+  },
+  {
+    "firstName": "Mundo",
+    "joiningDate": "2013-01-01",
+    "lastName": "carlos",
+    "employeeType": "Permanent",
+    "email" : "mc@gmail.com",
+    "address": {
+      "street": "mg road",
+      "aptNum": 99,
+      "pinCode": 320233,
+      "flatName": "PKM"
+    }
+  }
+]

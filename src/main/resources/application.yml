@@ -1,0 +1,24 @@
+spring:
+  h2:
+    console.enabled: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${JWK_SET_URI:http://localhost:8080/realms/dev-apps/protocol/openid-connect/certs}
+  datasource:
+      url: jdbc:h2:file:C:/localDB/spring-concepts-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,refresh
+
+server:
+   port: 8085
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: trace
+#    root: error

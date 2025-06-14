@@ -1,0 +1,29 @@
+
+spring:
+  #  config:
+  #    import: sensitive-regex.yml
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  datasource:
+    url: jdbc:h2:file:C:/localDB-dev/spring-concepts-db
+  h2:
+    console.enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,refresh
+  health:
+    elasticsearch:
+      enabled: false
+    vault:
+      enabled: false
+server:
+  port: 8084
+
+

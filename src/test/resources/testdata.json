@@ -1,0 +1,13 @@
+{
+  "firstName": "Nimitt",
+  "lastName": "Verma",
+  "joiningDate": "2025-01-01",
+  "address": {
+    "street": "Bakers Street 1",
+    "aptNum": 2,
+    "pinCode": "52525",
+    "flatName": "Pluto2"
+  },
+  "email": "abv@gmail.com",
+  "employeeType": "Permanent"
+}

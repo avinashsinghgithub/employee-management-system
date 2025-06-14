@@ -1,0 +1,13 @@
+{
+  "firstName": "Nivvvv",
+  "lastName": "gfhkksks",
+  "joiningDate": "2025-02-03",
+  "domain" : "development",
+  "email" : "nvn@gmail.com",
+  "address": {
+    "street": "Bakers Street",
+    "aptNum": 1,
+    "pinCode": "52552",
+    "flatName": "Allstate"
+  }
+}
