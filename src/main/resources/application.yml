@@ -5,7 +5,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: ${JWK_SET_URI:http://localhost:8080/realms/dev-apps/protocol/openid-connect/certs}
+          jwk-set-uri: ${JWK_SET_URI:http://localhost:8080/realms/dev-apps-test/protocol/openid-connect/certs}
   datasource:
       url: jdbc:h2:file:C:/localDB/spring-concepts-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
   management:
