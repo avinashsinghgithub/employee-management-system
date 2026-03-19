@@ -15,6 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -47,5 +48,7 @@ public class EmployeeDto {
 
     @ValidateEmployeeType(groups = {OrderOnePost.class, OrderOnePut.class})
     private String employeeType;
+
+    private List<ImageInfo> images;
 
 }

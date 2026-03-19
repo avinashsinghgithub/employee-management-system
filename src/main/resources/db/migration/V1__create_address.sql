@@ -1,9 +1,9 @@
 CREATE TABLE address
 (
-    id        UUID NOT NULL,
+    id        binary(16) NOT NULL,
     street    VARCHAR(255),
-    apt_name  INT  NOT NULL,
-    pin_code  INT  NOT NULL,
-    flat_name VARCHAR(255),
+    apt_name  VARCHAR(255)  NOT NULL,
+    pin_code  VARCHAR(255)  NOT NULL,
+    flatName  VARCHAR(255),
     CONSTRAINT pk_address PRIMARY KEY (id)
 );

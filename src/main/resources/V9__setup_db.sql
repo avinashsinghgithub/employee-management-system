@@ -1,3 +1,8 @@
+SET FOREIGN_KEY_CHECKS=0;
+-- save current sql_mode and disable it for this session so non-standard date literals like '1949-7-2' are accepted
+SET @old_sql_mode = @@sql_mode;
+SET SESSION sql_mode = '';
+
 DROP TABLE IF EXISTS salaries;
 DROP TABLE IF EXISTS titles;
 DROP TABLE IF EXISTS works_in;
@@ -429,7 +434,6 @@ INSERT INTO titles VALUES ( '54359', 'Tech Lev 1', '1979-9-26');
 UPDATE works_in SET to_date = '1979-9-26' WHERE emp_no = 54359 AND from_date = '1979-9-26';
 INSERT INTO works_in VALUES (54359, '0013', '1979-9-26', null);
 UPDATE works_in SET to_date = '1979-11-14' WHERE emp_no = 54326 AND from_date = '1977-4-19';
-INSERT INTO dept_manager VALUES ('0011', 54326, '1979-11-14', null);
 INSERT INTO works_in VALUES (54326, '0011', '1979-11-14', null);
 INSERT INTO titles VALUES ( '54347', 'Tech Lev 2', '1979-11-15');
 UPDATE dept_manager SET to_date = '1980-1-11' WHERE emp_no = 54324 AND from_date = '1971-6-5';
@@ -802,7 +806,7 @@ UPDATE works_in SET to_date = '1996-8-16' WHERE emp_no = 54334 AND from_date = '
 INSERT INTO works_in VALUES (54334, '0001', '1996-8-16', null);
 UPDATE works_in SET to_date = '1996-11-18' WHERE emp_no = 54362 AND from_date = '1989-12-3';
 INSERT INTO works_in VALUES (54362, '0004', '1996-11-18', null);
-INSERT INTO titles VALUES ( '54372', 'Tech Lev 2', '1996-12-16');
+INSERT INTO titles VALUES ( '54372', 'Tech Lev 2', '1997-4-18');
 UPDATE works_in SET to_date = '1997-4-18' WHERE emp_no = 54387 AND from_date = '1995-1-11';
 INSERT INTO works_in VALUES (54387, '0002', '1997-4-18', null);
 INSERT INTO titles VALUES ( '54324', 'Junior Architecht', '1997-5-22');
@@ -932,7 +936,6 @@ INSERT INTO employees VALUES (54409, '1985-4-6', 'Ivan', 'Cameron', '2005-9-4');
 INSERT INTO salaries VALUES ('54409', 56535, '2005-9-4');
 INSERT INTO titles VALUES ( '54409', 'Tech Lev 1', '2005-9-4');
 UPDATE works_in SET to_date = '2005-9-4' WHERE emp_no = 54409 AND from_date = '2005-9-4';
-INSERT INTO works_in VALUES (54409, '0005', '2005-9-4', null);
 INSERT INTO titles VALUES ( '54363', 'Programmer Lev 2', '2005-10-19');
 UPDATE works_in SET to_date = '2005-12-23' WHERE emp_no = 54356 AND from_date = '1978-11-7';
 INSERT INTO works_in VALUES (54356, '0001', '2005-12-23', null);
@@ -1044,7 +1047,7 @@ INSERT INTO salaries VALUES ('54410', 58043, '2013-7-15');
 INSERT INTO titles VALUES ( '54410', 'Tech Lev 1', '2013-7-15');
 UPDATE works_in SET to_date = '2013-7-15' WHERE emp_no = 54410 AND from_date = '2013-7-15';
 INSERT INTO works_in VALUES (54410, '0000', '2013-7-15', null);
-UPDATE dept_manager SET to_date = '2013-7-19' WHERE emp_no = 54357 AND from_date = '1979-1-14';
+UPDATE works_in SET to_date = '2013-7-19' WHERE emp_no = 54357 AND from_date = '1979-1-14';
 UPDATE works_in SET to_date = '2013-7-19' WHERE emp_no = 54357 AND from_date = '1979-1-14';
 INSERT INTO works_in VALUES (54357, '0000', '2013-7-19', null);
 UPDATE works_in SET to_date = '2013-8-22' WHERE emp_no = 54384 AND from_date = '1987-4-7';
@@ -1162,3 +1165,7 @@ INSERT INTO works_in VALUES (54422, '0012', '2018-11-4', null);
 INSERT INTO titles VALUES ( '54420', 'Tech Lev 2', '2018-11-21');
 UPDATE works_in SET to_date = '2019-1-17' WHERE emp_no = 54334 AND from_date = '2012-1-25';
 INSERT INTO works_in VALUES (54334, '0009', '2019-1-17', null);
+
+SET SESSION sql_mode = @old_sql_mode;
+SET FOREIGN_KEY_CHECKS=1;
+

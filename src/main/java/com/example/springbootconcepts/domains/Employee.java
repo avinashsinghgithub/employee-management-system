@@ -2,18 +2,19 @@ package com.example.springbootconcepts.domains;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Data
+@Getter
+@Setter
 public class Employee {
 
     @Id
@@ -46,12 +47,16 @@ public class Employee {
 
     @Column(name = "employeeType")
     String employeeType;
-//    public Department getDepartment() {
-//        return department;
-//    }
-//
-//    public void setDepartment(Department department) {
-//        this.department = department;
-//    }
 
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Image> images = new ArrayList<>();
+    public void addImage(Image image) {
+        images.add(image);
+        image.setEmployee(this);
+    }
+
+    public void removeImage(Image image) {
+        images.remove(image);
+        image.setEmployee(null);
+    }
 }

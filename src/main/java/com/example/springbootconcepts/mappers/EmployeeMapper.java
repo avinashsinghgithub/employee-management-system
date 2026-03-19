@@ -1,7 +1,9 @@
 package com.example.springbootconcepts.mappers;
 
 import com.example.springbootconcepts.domains.Employee;
+import com.example.springbootconcepts.domains.Image;
 import com.example.springbootconcepts.dto.EmployeeDto;
+import com.example.springbootconcepts.dto.ImageInfo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -14,8 +16,12 @@ public interface EmployeeMapper {
 
     EmployeeDto employeeToEmployeeDto(Employee employee);
 
+    // MapStruct will use these element mapping methods to map collections of images.
+    @Mapping(source = "fileName", target = "filename")
+    ImageInfo imageToImageInfo(Image image);
 
-//    @Mapping(target = "id", expression = "java(UUID.randomUUID())")
-//    @Mapping(target = "address.id", expression = "java(UUID.randomUUID())")
+    @Mapping(source = "filename", target = "fileName")
+    Image imageInfoToImage(ImageInfo imageInfo);
+
     Employee employeeDtoToEmployee(EmployeeDto employeeDto);
 }

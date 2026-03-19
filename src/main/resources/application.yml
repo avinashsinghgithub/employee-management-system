@@ -6,6 +6,7 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: ${JWK_SET_URI:http://localhost:8080/realms/dev-apps-test/protocol/openid-connect/certs}
+          audiences: ${OAUTH2_AUDIENCE:employee-management-service}
   datasource:
       url: jdbc:h2:file:C:/localDB/spring-concepts-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
   management:
@@ -13,12 +14,22 @@ spring:
     web:
       exposure:
         include: health,info,metrics,prometheus,refresh
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 server:
    port: 8085
-#logging:
-#  level:
-#    org:
-#      springframework:
-#        security: trace
+logging:
+  level:
+    org:
+      springframework:
+        security: trace
 #    root: error
+
+app:
+  upload-dir: uploads

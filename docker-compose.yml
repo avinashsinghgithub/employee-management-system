@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: employee-mangement-mysqlDB
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: employee-mangement       # optional
+      MYSQL_USER: employeemangement          # optional
+      MYSQL_PASSWORD: password      # optional
+    ports:
+      - "3307:3306" # map host 3307 -> container 3306 to avoid conflicts with host MySQL
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # If you prefer to keep DB files directly on the Windows host, uncomment and adjust the line below
+      # - "D:\\programming practice\\mysql_data:/var/lib/mysql"
+      # Mount init scripts (executed only on first DB initialization):
+      # - "D:\\programming practice\\mysql_init:/docker-entrypoint-initdb.d"
+
+volumes:
+  mysql_data:
+    driver: local
