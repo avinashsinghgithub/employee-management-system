@@ -1,6 +1,6 @@
 package com.example.springbootconcepts.controllers;
 
-import com.example.springbootconcepts.beanValidators.validationGroups.OrderOnePost;
+import com.example.springbootconcepts.validators.groups.*;
 import com.example.springbootconcepts.dto.AssignDept;
 import com.example.springbootconcepts.dto.DepartmentDto;
 import com.example.springbootconcepts.services.departmentServices.DepartmentService;

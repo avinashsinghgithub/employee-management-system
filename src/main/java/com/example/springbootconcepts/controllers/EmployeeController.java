@@ -1,7 +1,6 @@
 package com.example.springbootconcepts.controllers;
 
-import com.example.springbootconcepts.beanValidators.validationGroups.OrderOnePost;
-import com.example.springbootconcepts.beanValidators.validationGroups.OrderOnePut;
+import com.example.springbootconcepts.validators.groups.*;
 import com.example.springbootconcepts.dto.EmployeeDto;
 import com.example.springbootconcepts.services.employeeServices.EmployeeService;
 import lombok.RequiredArgsConstructor;

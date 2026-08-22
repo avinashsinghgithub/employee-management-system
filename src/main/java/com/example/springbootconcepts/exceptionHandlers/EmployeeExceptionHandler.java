@@ -1,6 +1,5 @@
 package com.example.springbootconcepts.exceptionhandlers;
 
-import com.example.springbootconcepts.exceptionHandlers.EmployeeErrorResponse;
 import com.example.springbootconcepts.exceptionhandlers.exceptions.EmployeeAlreadyExists;
 import com.example.springbootconcepts.exceptionhandlers.exceptions.EmployeeIdNotFoundException;
 import com.example.springbootconcepts.exceptionhandlers.exceptions.EntityNotFoundException;

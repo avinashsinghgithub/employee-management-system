@@ -1,4 +1,4 @@
-package com.example.springbootconcepts.beanValidators.validationGroups;
+package com.example.springbootconcepts.validators.groups;
 
 public interface OrderOnePost {
 }
