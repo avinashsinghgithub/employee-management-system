@@ -1,6 +1,6 @@
 package com.example.springbootconcepts.dto;
 
-import com.example.springbootconcepts.beanValidators.validationGroups.OrderOnePost;
+import com.example.springbootconcepts.validators.groups.OrderOnePost;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

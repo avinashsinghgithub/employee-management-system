@@ -1,9 +1,9 @@
 package com.example.springbootconcepts.services;
 
-import com.example.springbootconcepts.beanValidators.validationGroups.OrderOnePut;
+import com.example.springbootconcepts.validators.groups.OrderOnePut;
 import com.example.springbootconcepts.dto.EmployeeDto;
 import com.example.springbootconcepts.exceptionhandlers.exceptions.EntityNotFoundException;
-import com.example.springbootconcepts.beanValidators.validationGroups.OrderOnePost;
+import com.example.springbootconcepts.validators.groups.OrderOnePost;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;

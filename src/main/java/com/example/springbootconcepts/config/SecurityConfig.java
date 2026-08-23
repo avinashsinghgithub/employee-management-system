@@ -14,9 +14,17 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
-@Configuration
-@EnableWebSecurity
-@EnableMethodSecurity
+/**
+ *
+ * this security config is for JWT based authentication and authorization.
+ * this config is used when the application is deployed as a microservice
+ * and the authentication is done by an external identity provider like Keycloak.
+ * currently this config is not used in the application as we are using cookie based authentication and authorization.
+ *
+ * */
+//@Configuration
+//@EnableWebSecurity
+//@EnableMethodSecurity
 public class SecurityConfig {
 
     @Bean

@@ -1,7 +1,7 @@
 package com.example.springbootconcepts.controllers;
 
 import com.example.springbootconcepts.dto.ImageInfo;
-import com.example.springbootconcepts.exceptionHandlers.exceptions.ErrorResponse;
+import com.example.springbootconcepts.exceptionhandlers.exceptions.ErrorResponse;
 import com.example.springbootconcepts.services.ImageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

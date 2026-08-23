@@ -1,4 +1,4 @@
-package com.example.springbootconcepts.exceptionHandlers;
+package com.example.springbootconcepts.exceptionhandlers;
 
 import lombok.Getter;
 import lombok.Setter;
