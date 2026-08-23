@@ -12,6 +12,10 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME:${MYSQL_USER:employeemangement}}
     password: ${SPRING_DATASOURCE_PASSWORD:${MYSQL_PASSWORD:password}}
     driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:redis}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
   jpa:
     hibernate:
       ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
