@@ -51,9 +51,12 @@ public class CookieAuthenticationFilter extends OncePerRequestFilter {
                 Optional<UserSession> maybe = sessionService.getSession(sessionId);
                 if (maybe.isPresent()) {
                     UserSession session = maybe.get();
-                    log.debug("CookieAuthenticationFilter: loaded session for user='{}'", session.getUsername());
+                        log.info("CookieAuthenticationFilter: loaded session for user='{}' with session roles={}",
+                            session.getUsername(), session.getRoles());
 
                     List<GrantedAuthority> authorities = session.getRoles().stream()
+                            .filter(role -> role != null && !role.isBlank())
+                            .map(role -> role.startsWith("ROLE_") ? role : "ROLE_" + role)
                             .map(SimpleGrantedAuthority::new)
                             .collect(Collectors.toList());
 
@@ -61,9 +64,10 @@ public class CookieAuthenticationFilter extends OncePerRequestFilter {
                             session.getUsername(), null, authorities);
                     auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(auth);
-                    log.debug("CookieAuthenticationFilter: authentication set for user='{}'", session.getUsername());
+                        log.info("CookieAuthenticationFilter: authentication set for user='{}' with authorities={}",
+                            session.getUsername(), authorities);
                 } else {
-                    log.debug("CookieAuthenticationFilter: no session found for id='{}'", sessionId);
+                        log.warn("CookieAuthenticationFilter: no authenticated session found for supplied cookie");
                 }
             } else {
                 log.trace("CookieAuthenticationFilter: no cookie '{}' present", cookieName);

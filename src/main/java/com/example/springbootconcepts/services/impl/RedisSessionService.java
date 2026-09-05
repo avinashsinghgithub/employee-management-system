@@ -32,6 +32,7 @@ public class RedisSessionService implements SessionService {
     private static final String KEY_PREFIX = "spring:session:sessions:";
     private static final String AUTHENTICATED_ATTR = "sessionAttr:isAuthenticated";
     private static final String USER_ID_ATTR = "sessionAttr:userId";
+    private static final String ROLES_ATTR = "sessionAttr:roles";
 
     private final RedisTemplate<String, Object> redis;
     private final ObjectMapper mapper;
@@ -78,12 +79,13 @@ public class RedisSessionService implements SessionService {
 
         Object userId = sessionAttributes.get(USER_ID_ATTR);
         String username = userId == null ? "Unknown user" : String.valueOf(userId);
-        log.debug("Validated Spring Session key '{}' for user '{}'", k, username);
+        List<String> roles = extractRoles(sessionAttributes);
+        log.debug("Validated Spring Session key '{}' for user '{}' with roles {}", k, username, roles);
 
         return Optional.of(new UserSession(
                 sessionId,
                 username,
-                List.of("ROLE_USER"),
+                roles,
                 getExpiresAt(sessionAttributes)
         ));
     }
@@ -136,6 +138,22 @@ public class RedisSessionService implements SessionService {
     public void invalidateSession(String sessionId) {
         if (sessionId == null) return;
         redis.delete(KEY_PREFIX + sessionId);
+    }
+
+    private List<String> extractRoles(Map<Object, Object> sessionAttributes) {
+        Object roles = sessionAttributes.get(ROLES_ATTR);
+        if (roles instanceof List<?> list) {
+            return list.stream()
+                    .filter(java.util.Objects::nonNull)
+                    .map(String::valueOf)
+                    .filter(role -> !role.isBlank())
+                    .map(role -> role.startsWith("ROLE_") ? role : "ROLE_" + role)
+                    .toList();
+        }
+        if (roles instanceof String str && !str.isBlank()) {
+            return List.of(str.startsWith("ROLE_") ? str : "ROLE_" + str);
+        }
+        return List.of("ROLE_USER");
     }
 
     private Instant getExpiresAt(Map<Object, Object> sessionAttributes) {
